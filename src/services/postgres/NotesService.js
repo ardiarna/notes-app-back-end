@@ -7,13 +7,7 @@ const NotFoundError = require('../../exceptions/NotFoundError');
 
 class NotesService {
   constructor() {
-    this._pool = new Pool({
-      host: process.env.PGHOST,
-      port: process.env.PGPORT,
-      user: process.env.PGUSER,
-      password: process.env.PGPASSWORD,
-      database: process.env.PGDATABASE,
-    });
+    this._pool = new Pool();
   }
 
   async addNote({ title, body, tags }) {
